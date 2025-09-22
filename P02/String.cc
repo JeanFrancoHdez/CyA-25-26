@@ -6,17 +6,19 @@
 // Práctica 2: Cadenas y lenguajes
 // Autor: Jean Franco Hernández García
 // Correo: alu0101538853@ull.edu.es
-// Fecha: 19/09/2024
+// Fecha: 19/09/2025
 // Archivo "String.cc"
 // Contiene el cuerpo de los métodos declarados en "String.h"
 // Referencias:
 // Enlaces de interés
 //
 // Historial de revisiones
-// 19/09/2024 - Creación (primera versión) del código
+// 19/09/2025 - Creación (primera versión) del código
 
 #include "String.h"
 #include "Alphabet.h"
+
+const char EPSILON = '&';
 
 bool String::operator<(const String& other) const {
   // Ordenar por longitud y luego lexicográficamente
@@ -28,14 +30,11 @@ bool String::operator<(const String& other) const {
   return false;
 }
 
-const char EPSILON = '&';
-
 /**
  * @brief Constructor por defecto
 */
 String::String() {
-  char epsilon = '&';
-  string_.push_back(epsilon);
+  string_.push_back(EPSILON);
   length_ = 0;
 }
 

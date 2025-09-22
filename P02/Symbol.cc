@@ -6,13 +6,13 @@
 // Práctica 2: Cadenas y lenguajes
 // Autor: Jean Franco Hernández García
 // Correo: alu0101538853@ull.edu.es
-// Fecha: 19/09/2024
+// Fecha: 19/09/2025
 // Archivo "Symbol.cc"
 // Contiene el cuerpo de los métodos declarados en "Symbol.h"
 // Referencias:
 // Enlaces de interés
 // Historial de revisiones
-// 19/09/2024 - Creación (primera versión) del código
+// 19/09/2025 - Creación (primera versión) del código
 
 #include "Symbol.h"
 
@@ -39,9 +39,8 @@ void Symbol::printSymbol(std::ostream& out) const {
  * @brief Sobrecarga del operador de comparación
  */
 bool Symbol::operator<(const Symbol& other) const {
-    
-    return symbol_ < other.symbol_;
-  }
+  return symbol_ < other.symbol_;
+}
 
 /**
  * @brief Sobrecarga del operador de inserción en flujo

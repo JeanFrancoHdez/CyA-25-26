@@ -6,13 +6,13 @@
 // Práctica 2: Cadenas y lenguajes
 // Autor: Jean Franco Hernández García
 // Correo: alu0101538853@ull.edu.es
-// Fecha: 19/09/2024
+// Fecha: 19/09/2025
 // Archivo "Alphabet.h"
 // Contiene la declaración de la clase "Alphabet"
 // Referencias:
 // Enlaces de interés
 // Historial de revisiones
-// 19/09/2024 - Creación (primera versión) del código
+// 19/09/2025 - Creación (primera versión) del código
 
 #ifndef ALPHABET_H
 #define ALPHABET_H

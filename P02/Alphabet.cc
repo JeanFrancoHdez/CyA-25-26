@@ -6,19 +6,19 @@
 // Práctica 2: Cadenas y lenguajes
 // Autor: Jean Franco Hernández García
 // Correo: alu0101538853@ull.edu.es
-// Fecha: 19/09/2024
+// Fecha: 19/09/2025
 // Archivo "Alphabet.cc"
 // Contiene el cuerpo de los métodos declarados en "Alphabet.h"
 // Referencias:
 // Enlaces de interés
 //
 // Historial de revisiones
-// 19/09/2024 - Creación (primera versión) del código
+// 19/09/2025 - Creación (primera versión) del código
 
 #include "Alphabet.h"
 
 /**
- * @brief Constructor por parámetros
+ * @brief Constructor por parámetros, a partir de una std::string
 */
 Alphabet::Alphabet(const std::string& string_for_create) {
   for (unsigned int i{0}; i < string_for_create.length(); i++) {
@@ -28,7 +28,7 @@ Alphabet::Alphabet(const std::string& string_for_create) {
 }
 
 /**
- * @brief Constructor por parámetros
+ * @brief Constructor por parámetros, a partir de un objeto de la clase String
 */
 Alphabet::Alphabet(const String& string_for_create) {
   for (unsigned int i{0}; i < string_for_create.getLength(); i++) {

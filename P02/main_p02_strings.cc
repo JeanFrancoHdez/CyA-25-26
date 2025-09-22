@@ -6,12 +6,12 @@
 // Práctica 2: Cadenas y lenguajes
 // Autor: Jean Franco Hernández García
 // Correo: alu0101538853@ull.edu.es
-// Fecha: 19/09/2024
+// Fecha: 19/09/2025
 // Archivo cya-P02-strings.cc: programa cliente.
 // Referencias:
 // Enlaces de interés
 // Historial de revisiones
-// 19/09/2024 - Creación (primera versión) del código
+// 19/09/2025 - Creación (primera versión) del código
 
 #include "Symbol.h"
 #include "String.h"
@@ -20,18 +20,22 @@
 #include "Language.h"
 
 void showHelp(void) {
-  std::cout << "\nDescripción: Programa que dado un fichero de entrada con la especificación de cadenas, realiza un conjunto de comprobaciones básicas sobre ellas.\n"
+  std::cout << "\nDescripción: Programa que dado un fichero de entrada con una especificación de cadenas, realiza un conjunto de operaciones básicas sobre ellas.\n"
             << "Uso de caso general: ./p02_strings filein.txt fileout.txt opcode\n"
             << std::endl;
 }
 
 int main (int argc, char *argv[]) {
-  // Declaración de variables
   std::string input_filename = argv[1];
-
-  if (input_filename == "-h" || input_filename == "--help") {
+  if (argc == 2 && (input_filename == "-h" || input_filename == "--help")) {
     showHelp();
     return 0;
+  }
+
+  // Comprobar número de argumentos
+  if (argc != 4) {
+    std::cerr << "Error: Número de argumentos incorrecto.\nUso de caso general: ./p02_strings filein.txt fileout.txt opcode" << std::endl;
+    return EXIT_FAILURE;
   }
 
   std::ifstream file_in(input_filename);
@@ -48,11 +52,22 @@ int main (int argc, char *argv[]) {
 
   std::string cadena;
   std::string alphabet;
-  //int line_number = 1;
+  
   // Lectura desde el archivo 
   while (file_in >> cadena >> alphabet ) {
     String string(cadena);
     Alphabet alphabet_of_string(alphabet);
+    // Validar que todos los símbolos de la cadena están en el alfabeto
+    bool valid = true;
+    const std::set<Symbol>& symbols = alphabet_of_string.getSymbols();
+    for (unsigned int i = 0; i < string.getLength(); ++i) {
+      if (symbols.find(string.getElement(i)) == symbols.end()) {
+        std::cerr << "Error: La cadena '" << cadena << "' contiene símbolos no presentes en el alfabeto '" << alphabet << "'. Línea omitida." << std::endl;
+        valid = false;
+        break;
+      }
+    }
+    if (!valid) continue;
     switch (opcode) {
       case 1: { // Alfabeto asociado
         file_out << " " << string.getAlphabet() << std::endl;
@@ -84,7 +99,6 @@ int main (int argc, char *argv[]) {
         std::cout << "Opción incorrecta o no disponible\n";
         return 0;
     }
-    //++line_number;
   }
   return 0;
 }

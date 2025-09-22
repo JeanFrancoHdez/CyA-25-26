@@ -6,13 +6,13 @@
 // Práctica 2: Cadenas y lenguajes
 // Autor: Jean Franco Hernández García
 // Correo: alu0101538853@ull.edu.es
-// Fecha: 19/09/2024
+// Fecha: 19/09/2025
 // Archivo "Language.h"
 // Contiene la declaración de la clase "Language"
 // Referencias:
 // Enlaces de interés
 // Historial de revisiones
-// 19/09/2024 - Creación (primera versión) del código
+// 19/09/2025 - Creación (primera versión) del código
 
 #ifndef LANGUAGE_H
 #define LANGUAGE_H
@@ -29,6 +29,7 @@ class Language {
     const std::set<String>& GetStrings() const;
     size_t Size() const;
     friend std::ostream& operator<<(std::ostream& out, const Language& language);
+    
   private:
     std::set<String> language_;
 };

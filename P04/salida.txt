@@ -1,0 +1,21 @@
+PROGRAM: pruebas.cpp
+DESCRIPTION:
+// Descripción del codigo: Programa en C++
+
+VARIABLES:
+[Line 6] DOUBLE: flotante = 2.0
+[Line 16] INT: factorial = 1
+[Line 26] INT: limit
+
+STATEMENTS:
+[Line 17] LOOP: for
+[Line 28] LOOP: for
+
+MAIN:
+False
+
+COMMENTS:
+[Line 1] DESCRIPTION
+[Line 9]  Returns the factorial of the argument
+[Line 24] int main () {
+[Line 32] }
